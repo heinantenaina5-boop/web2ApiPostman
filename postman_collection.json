@@ -1,0 +1,59 @@
+{
+  "info": {
+    "name": "API Etudiants (CRUD - MVC)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3000" }
+  ],
+  "item": [
+    {
+      "name": "Lister tous les etudiants",
+      "request": { "method": "GET", "url": "{{baseUrl}}/etudiants" }
+    },
+    {
+      "name": "Lire un etudiant precis",
+      "request": { "method": "GET", "url": "{{baseUrl}}/etudiants/1" }
+    },
+    {
+      "name": "Creer un etudiant",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/etudiants",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nom\": \"Andria\",\n  \"prenom\": \"Tojo\",\n  \"email\": \"tojo.andria@example.com\",\n  \"filiere\": \"Reseaux\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Modifier completement (PUT)",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/etudiants/1",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nom\": \"Rakoto\",\n  \"prenom\": \"Hery\",\n  \"email\": \"hery.rakoto@example.com\",\n  \"filiere\": \"Informatique - Master\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Modifier partiellement (PATCH)",
+      "request": {
+        "method": "PATCH",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/etudiants/2",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"filiere\": \"Gestion - Licence 3\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Supprimer un etudiant",
+      "request": { "method": "DELETE", "url": "{{baseUrl}}/etudiants/2" }
+    }
+  ]
+}
