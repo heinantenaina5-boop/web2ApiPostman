@@ -6,7 +6,7 @@ import {
   updateEtudiant,
   patchEtudiant,
   deleteEtudiant,
-} from "../controllers/etudiant.controller";
+} from "../controllers/etudiantController";
 import { authenticateToken } from "../middlewares/auth.middleware";
 
 const router = Router();
